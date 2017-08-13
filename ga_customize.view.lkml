@@ -4,20 +4,24 @@ explore: ga_sessions_block {
   extends: [ga_sessions_base]
   extension: required
 
-  always_filter: {
-    filters: {
-      field: ga_sessions.partition_date
-      value: "2013-09-10 00:00:00"
-      ## Partition Date should always be set to a recent date to avoid runaway queries
-   }
-  }
+#  always_filter: {
+#    filters: {
+#      field: ga_sessions.partition_date
+#      value: "2017-08-13 00:00:00"
+#      ## Partition Date should always be set to a recent date to avoid runaway queries
+#   }
+#  }
 }
 
 view: ga_sessions {
   extends: [ga_sessions_base]
   # The SQL_TABLE_NAME must be replaced here for date partitioned queries to work properly.
 
-  sql_table_name: `ga360.ga_sessions_*` ;;
+  #sql_table_name: `ga360.ga_sessions_*` ;;
+  #sql_table_name: `TEST.GCS_SESSIONS_TEST.ga_sessions_*`;;
+  #sql_table_name: [92007919.ga_sessions_20170811] ;;
+  sql_table_name: `92007919.ga_sessions_*` ;;
+
 
   dimension: block_name {
     type: string

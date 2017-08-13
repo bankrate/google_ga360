@@ -8,8 +8,8 @@
     - name: date
       label: "Date"
       type: date_filter
-      # default_value: "1 day ago for 1 day"
-      default_value: '2013-09-10 00:00:00'
+      default_value: "1 day ago for 1 day"
+      #default_value: '2013-09-10 00:00:00'
 
   elements:
 
