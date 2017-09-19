@@ -2,16 +2,19 @@ explore: ga_sessions_base {
   extension: required
   view_name: ga_sessions
   view_label: "Session"
+
   join: totals {
     view_label: "Session"
-    #sql: LEFT JOIN UNNEST([${ga_sessions.totals}]) as totals ;;
     sql: LEFT JOIN UNNEST([${ga_sessions.totals}]) as totals ;;
+
 
     relationship: one_to_one
   }
   join: trafficSource {
     view_label: "Session: Traffic Source"
     sql: LEFT JOIN UNNEST([${ga_sessions.trafficSource}]) as trafficSource ;;
+ #   sql: LEFT JOIN ([${ga_sessions.trafficSource}]) as trafficSource ;;
+
     relationship: one_to_one
   }
   # join: adwordsClickInfo {

@@ -17,10 +17,10 @@ view: ga_sessions {
   extends: [ga_sessions_base]
   # The SQL_TABLE_NAME must be replaced here for date partitioned queries to work properly.
 
-  #sql_table_name: `ga360.ga_sessions_*` ;;
-  #sql_table_name: `TEST.GCS_SESSIONS_TEST.ga_sessions_*`;;
+  sql_table_name: `ga360.ga_sessions_*` ;;
+  #sql_table_name: TEST.GCS_SESSIONS_TEST;;
   #sql_table_name: [92007919.ga_sessions_20170811] ;;
-  sql_table_name: `92007919.ga_sessions_*` ;;
+  #sql_table_name: `92007919.ga_sessions_*` ;;
 
 
   dimension: block_name {

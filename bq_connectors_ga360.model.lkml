@@ -1,4 +1,6 @@
 connection: "big_query_connection"
+#connection: "datacollector"
+
 
 # include all the views
 include: "*.view"
