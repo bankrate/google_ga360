@@ -17,10 +17,10 @@ view: ga_sessions {
   extends: [ga_sessions_base]
   # The SQL_TABLE_NAME must be replaced here for date partitioned queries to work properly.
 
-  sql_table_name: `ga360.ga_sessions_*` ;;
+  #sql_table_name: `ga360.ga_sessions_*` ;;
   #sql_table_name: TEST.GCS_SESSIONS_TEST;;
   #sql_table_name: [92007919.ga_sessions_20170811] ;;
-  #sql_table_name: `92007919.ga_sessions_*` ;;
+  sql_table_name: `92007919.ga_sessions_*` ;;
 
 
   dimension: block_name {
@@ -47,6 +47,64 @@ view: ga_sessions {
   # dimension: custom_dimension_3 {
   #   sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=3) ;;
   # }
+
+   dimension: CD2_PID {
+     sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=2) ;;
+   }
+
+
+  dimension: CD23_Repsonsive {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=23) ;;
+  }
+
+  dimension: CD34_Optimizely_Test_Slot1 {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=34) ;;
+  }
+
+  dimension: CD35_Optimizely_Test_Slot2 {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=35) ;;
+  }
+
+  dimension: CD36_Optimizely_Test_Slot3 {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=36) ;;
+  }
+
+  dimension: CD37_Optimizely_Test_Slot4 {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=37) ;;
+  }
+
+  dimension: CD38_Optimizely_Test_Slot5 {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=38) ;;
+  }
+
+  dimension: CD39_Optimizely_Test_Slot6 {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=39) ;;
+  }
+
+  dimension: CD40_Optimizely_Test_Slot7 {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=40) ;;
+  }
+
+  dimension: CD41_Optimizely_Test_Slot8 {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=41) ;;
+  }
+
+  dimension: CD42_Optimizely_Test_Slot9 {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=42) ;;
+  }
+
+  dimension: CD43_Optimizely_Test_Slot10 {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=43) ;;
+  }
+
+  dimension: CD60_Traffic_Source {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=60) ;;
+  }
+
+  dimension: CD68_EC_ID {
+    sql: (SELECT value FROM UNNEST(${TABLE}.customdimensions) WHERE index=68) ;;
+  }
+
 }
 
 view: geoNetwork {
