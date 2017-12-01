@@ -9,5 +9,6 @@ include: "*.view"
 include: "*.dashboard"
 
 explore: ga_sessions {
+  hidden: yes
   extends: [ga_sessions_block]
 }
